@@ -12,7 +12,6 @@
           <field name="description"/>
           <field name="complete"/>
         </tree>
-
       </field>
     </record>
 
@@ -23,13 +22,13 @@
       <field name="model">checklist.checklist</field>
       <field name="arch" type="xml">
         <form string="Checklist Form">
-            <sheet>
-                <group>
-                    <field name="name" placeholder="Subject of checklist"/>
-                    <field name="description"  placeholder="description you task"/>
-                    <field name="complete"/>
-                </group>
-            </sheet>
+          <sheet>
+            <group>
+              <field name="name" placeholder="Subject of checklist"/>
+              <field name="description"  placeholder="description you task"/>
+              <field name="complete"/>
+            </group>
+          </sheet>
         </form>
       </field>
     </record>
@@ -44,7 +43,6 @@
     </record>
 
 
-
     <!-- server action to the one above -->
     
     <record model="ir.actions.server" id="checklist.action_server">
@@ -52,9 +50,9 @@
       <field name="model_id" ref="model_checklist_checklist"/>
       <field name="code">
         action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": self._name,
+        "type": "ir.actions.act_window",
+        "view_mode": "tree,form",
+        "res_model": self._name,
         }
       </field>
     </record>
@@ -67,14 +65,6 @@
     <!-- menu categories -->
     
     <menuitem name="Check List" id="checklist.menu_1" parent="checklist.menu_root" action="checklist.action_window"/>
-    <!-- <menuitem name="Menu 2" id="checklist.menu_2" parent="checklist.menu_root"/> -->
-    
-    <!-- actions -->
-    
-    <!-- <menuitem name="List" id="checklist.menu_1_list" parent="checklist.menu_1"
-              action="checklist.action_window"/> -->
-    <!-- <menuitem name="Server to list" id="checklist" parent="checklist.menu_2"
-              action="checklist.action_server"/> -->
     
   </data>
 </odoo>
